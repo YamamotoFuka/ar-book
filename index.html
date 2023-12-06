@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARテスト</title>
+
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+  </head>
+  <body style="margin: 0px; overflow: hidden">
+    <div class="arjs-loader">
+      <div>Loading, please wait...</div>
+    </div>
+    <!-- <a-scene embedded arjs="debugUIEnabled:false;"> -->
+    <a-scene embedded arjs="debugUIEnabled:false; ">
+      <!--ARの画像-->
+      <a-assets>
+        <img id="front" src="img/umbrella.png" />
+        <!-- <video id="#front" src="video/tikitok.MP4"></video> -->
+      </a-assets>
+
+      <!-- マーカーのタグの中に表示させたいオブジェクトをマークアップする （Hiro）-->
+      <!-- <a-marker preset="hiro">
+        <a-planez
+          position="0 .75 0"
+          rotation="0 0 0"
+          width="1.0"
+          height="1.75"
+          material="src: #front;"
+        >
+        </a-plane>
+      </a-marker> -->
+
+      <!-- 自作のマーカー -->
+      <a-marker type="pattern" url="book/marker/pattern-umbrella.patt">
+        <a-sphere scale=".25 .25 .25" position="0 .5 0" color="#f00">
+          <a-animation
+            attribute="position"
+            to="0 1 0"
+            direction="alternate"
+            dur="2000"
+            repeat="indefinite"
+          >
+          </a-animation>
+        </a-sphere>
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
+
+<!-- git init -->
+<!-- git add . -->
+<!-- git commit -m "first commit" -->
+<!-- git branch -M main -->
+<!-- git remote add origin https://github.com/YamamotoFuka/ar-book.git -->
+<!-- git push -u origin main -->
