@@ -17,13 +17,22 @@
     <a-scene embedded arjs="debugUIEnabled:false; ">
       <!--ARの画像-->
       <a-assets>
-        <!-- <video id="#front" src="video/tikitok.MP4"></video> -->
         <img id="front" src="./img/umbrella.png" />
+        <!-- <video id="#front" src=""></video> -->
       </a-assets>
 
       <!-- 自作のマーカー -->
+      <a-marker type="pattern" url="pattern-umbrella.patt">
+        <a-entity
+          geometry="primitive: plane; width: 5; height: 5"
+          material="src:#front"
+          position="0 0.1 0"
+          rotation="-90 0 0"
+        ></a-entity>
+      </a-marker>
+
       <!-- <a-marker type="pattern" url="pattern-umbrella.patt">
-        <a-sphere scale=".8 .8 .8" position="0  0" color="#f00">
+        <a-sphere scale=".8 .8 .8" position="0  0" color="blue">
         <a-animation
           attribute="position"
           to="0 1 0"
@@ -33,18 +42,6 @@
         >
         </a-animation>
       </a-marker> -->
-
-      <a-marker type="pattern" url="./marker/pattern-umbrella.patt">
-        <!-- マーカーに関連するARコンテンツを記述 -->
-        <a-image src="#front" width="1" height="1"></a-image>
-        <a-animation
-          attribute="position"
-          to="0 1 0"
-          direction="alternate"
-          dur="2000"
-          repeat="indefinite"
-        ></a-animation>
-      </a-marker>
 
       <!-- マーカーのタグの中に表示させたいオブジェクトをマークアップする （Hiro）-->
       <!-- <a-marker preset="hiro">
