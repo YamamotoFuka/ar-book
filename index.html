@@ -17,41 +17,51 @@
     <a-scene embedded arjs="debugUIEnabled:false; ">
       <!--ARの画像-->
       <a-assets>
-        <img id="front" src="img/umbrella.png" />
         <!-- <video id="#front" src="video/tikitok.MP4"></video> -->
+        <img id="front" src="./img/umbrella.png" />
       </a-assets>
 
+      <!-- 自作のマーカー -->
+      <!-- <a-marker type="pattern" url="pattern-umbrella.patt">
+        <a-sphere scale=".8 .8 .8" position="0  0" color="#f00">
+        <a-animation
+          attribute="position"
+          to="0 1 0"
+          direction="alternate"
+          dur="2000"
+          repeat="indefinite"
+        >
+        </a-animation>
+      </a-marker> -->
+
+      <a-marker type="pattern" url="./marker/pattern-umbrella.patt">
+        <!-- マーカーに関連するARコンテンツを記述 -->
+        <a-image src="#front" width="1" height="1"></a-image>
+        <a-animation
+          attribute="position"
+          to="0 1 0"
+          direction="alternate"
+          dur="2000"
+          repeat="indefinite"
+        ></a-animation>
+      </a-marker>
+
       <!-- マーカーのタグの中に表示させたいオブジェクトをマークアップする （Hiro）-->
-      <a-marker preset="hiro">
+      <!-- <a-marker preset="hiro">
         <a-planez
           position="0 .75 0"
           rotation="0 0 0"
           width="1.0"
           height="1.75"
           material="src: #front;"
-        >
+        >  
         </a-plane>
-      </a-marker>
+      </a-marker> -->
 
-      <!-- 自作のマーカー -->
-      <!-- <a-marker type="pattern" url="marker/pattern-umbrella.patt">
-        <a-sphere scale=".25 .25 .25" position="0 .5 0" color="#f00">
-          <a-animation
-            attribute="position"
-            to="0 1 0"
-            direction="alternate"
-            dur="2000"
-            repeat="indefinite"
-          >
-          </a-animation>
-        </a-sphere>
-      </a-marker>
-    -->
-      
       <a-entity camera></a-entity>
     </a-scene>
   </body>
-  </html> 
+</html>
 
 <!-- git init -->
 <!-- git add . -->
