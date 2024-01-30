@@ -62751,12 +62751,7 @@ run();
 
       var path = url.split("/").slice(0, -1).join("/");
       files = files.map(function (file) {
-        if (
-          file === "patt.hiro" ||
-          file === "patt.kanji" ||
-          file === "patt2.hiro" ||
-          file === "patt2.kanji"
-        ) {
+        if (file === "mission1.png") {
           return ["http://127.0.0.1:8080/data/data/" + file, file];
         } else if (file === "mission1.png") {
           return [path + "/custom-markers/" + file, "mission1.png"];
