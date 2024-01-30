@@ -8,7 +8,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1.3.0/dist/aframe-master.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    
+
     <style>
       .arjs-loader {
         height: 100%;
@@ -22,45 +22,44 @@
         justify-content: center;
         align-items: center;
       }
-    
+
       .arjs-loader div {
         text-align: center;
         font-size: 1.25em;
         color: white;
       }
     </style>
-    
-    <body style="margin : 0px; overflow: hidden;">
-      <!-- minimal loader shown until image descriptors are loaded -->
-      <div class="arjs-loader">
-        <div>じゅんびちゅう...</div>
-      </div>
-      <a-scene
-        vr-mode-ui="enabled: false;"
-        renderer="logarithmicDepthBuffer: true; precision: medium;"
-        embedded
-        arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+  </head>
+  <body style="margin: 0px; overflow: hidden">
+    <!-- minimal loader shown until image descriptors are loaded -->
+    <div class="arjs-loader">
+      <div>じゅんびちゅう...</div>
+    </div>
+    <a-scene
+      vr-mode-ui="enabled: false;"
+      renderer="logarithmicDepthBuffer: true; precision: medium;"
+      embedded
+      arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+    >
+      <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
+      <a-nft
+        type="nft"
+        url="./img/mission1.png"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance=".01"
+        smoothThreshold="5"
       >
-        <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
-        <a-nft
-          type="nft"
-          url="./img/mission1.png"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        >
-          <a-entity
-            gltf-model="./animation/flower.mp4"
-            scale="5 5 5"
-            position="150 300 -100"
-          >
-          </a-entity>
-        </a-nft>
-        <a-entity camera></a-entity>
-      </a-scene>
-    </body>
-    </html>
+        <a-entity
+          gltf-model="./animation/flower.mp4"
+          scale="5 5 5"
+          position="150 300 -100"
+        ></a-entity>
+      </a-nft>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
 
 <!-- git init -->
 <!-- git add . -->
