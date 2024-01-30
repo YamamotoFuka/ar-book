@@ -62749,19 +62749,24 @@ run();
 
       if (!files.length) return ok();
 
-      var path = url.split('/').slice(0, -1).join('/');
-      files = files.map(function(file) {
-          if (file === 'patt.hiro' || file === 'patt.kanji' || file === 'patt2.hiro' || file === 'patt2.kanji') {
-              return ['http://127.0.0.1:8080/data/data/' + file, file];
-          } else if (file === '../img/mission1.png') {
-              return [path + '/custom-markers/' + file, 'flower_pattern.png'];
-          } else if (file === '../img/mission2.png') {
-              return [path + '/custom-markers/' + file, 'muffler_pattern.patt'];
-        } else if (file === '../img/mission3.png') {
-            return [path + '/custom-markers/' + file, 'ground_pattern.patt']; 
-          }
-          // Add more conditions as needed for additional markers
-          return [path + '/' + file, file];
+      var path = url.split("/").slice(0, -1).join("/");
+      files = files.map(function (file) {
+        if (
+          file === "patt.hiro" ||
+          file === "patt.kanji" ||
+          file === "patt2.hiro" ||
+          file === "patt2.kanji"
+        ) {
+          return ["http://127.0.0.1:8080/data/data/" + file, file];
+        } else if (file === "../img/mission1.png") {
+          return [path + "/custom-markers/" + file, "mission.png"];
+        } else if (file === "../img/mission2.png") {
+          return [path + "/custom-markers/" + file, "muffler_pattern.patt"];
+        } else if (file === "../img/mission3.png") {
+          return [path + "/custom-markers/" + file, "ground_pattern.patt"];
+        }
+        // Add more conditions as needed for additional markers
+        return [path + "/" + file, file];
       });
       ajaxDependencies(files, ok);
     });
