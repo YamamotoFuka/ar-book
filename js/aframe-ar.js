@@ -62751,9 +62751,14 @@ run();
 
       var path = url.split("/").slice(0, -1).join("/");
       files = files.map(function (file) {
-        if (file === "mission1.png") {
+        if (
+          file === "patt.hiro" ||
+          file === "patt.kanji" ||
+          file === "patt2.hiro" ||
+          file === "patt2.kanji"
+        ) {
           return ["http://127.0.0.1:8080/data/data/" + file, file];
-        } else if (file === "mission1.png") {
+        } else if (file === "../img/mission1.png") {
           return [path + "/custom-markers/" + file, "mission1.png"];
         } else if (file === "../img/mission2.png") {
           return [path + "/custom-markers/" + file, "muffler_pattern.patt"];
@@ -64092,6 +64097,14 @@ ARjs.Profile.prototype.reset = function () {
     patternUrl: THREEx.ArToolkitContext.baseURL + "../data/data/patt.hiro",
     changeMatrixMode: "modelViewMatrix",
   };
+
+    // 自作のフリーマーカーに関する追加の設定
+    this.customMarkerParameters = {
+        type: "image",
+        patternUrl: THREEx.ArToolkitContext.baseURL + "../img/mission1.png",  // 自作のフリーマーカーのパス
+        changeMatrixMode: "modelViewMatrix",
+        // 他のカスタムパラメータを追加
+      };
   return this;
 };
 
