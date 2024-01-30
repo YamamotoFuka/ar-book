@@ -62758,7 +62758,7 @@ run();
           file === "patt2.kanji"
         ) {
           return ["http://127.0.0.1:8080/data/data/" + file, file];
-        } else if (file === "../img/mission1.png") {
+        } else if (file === "mission1.png") {
           return [path + "/custom-markers/" + file, "mission1.png"];
         } else if (file === "../img/mission2.png") {
           return [path + "/custom-markers/" + file, "muffler_pattern.patt"];
