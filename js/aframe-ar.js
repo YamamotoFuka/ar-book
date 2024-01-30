@@ -62759,7 +62759,7 @@ run();
         ) {
           return ["http://127.0.0.1:8080/data/data/" + file, file];
         } else if (file === "../img/mission1.png") {
-          return [path + "/custom-markers/" + file, "mission.png"];
+          return [path + "/custom-markers/" + file, "mission1.png"];
         } else if (file === "../img/mission2.png") {
           return [path + "/custom-markers/" + file, "muffler_pattern.patt"];
         } else if (file === "../img/mission3.png") {
