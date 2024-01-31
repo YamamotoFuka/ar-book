@@ -4,149 +4,144 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ワニくんのプレゼントだいさくせんAR</title>
+    <title>ARテスト</title>
 
-    <!-- A-FrameとAR.jsのスクリプトを読み込む -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
   </head>
   <body style="margin: 0px; overflow: hidden">
-    <!-- ローディング画面 -->
     <div class="arjs-loader">
-      <div>じゅんびちゅう...</div>
+      <div>Loading, please wait...</div>
     </div>
 
-    <!-- ARシーン -->
-    <a-scene
-      embedded
-      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: true; patternRatio: 0.90;"
-    >
-      <!-- ARのコンテンツ -->
+    <a-scene embedded arjs="debugUIEnabled:false; patternRatio: 0.90;">
       <a-assets>
-        <!-- マーカーに関連する動画を読み込む -->
+        <!-- 動画や画像などのコンテンツをここで定義 -->
         <video
-          id="animation1"
+          id="video1"
           src="animation/flower.mp4"
-          crossorigin
           playsinline
           loop
           autoplay
         ></video>
-        <!-- 自作のマーカー -->
-        <a-marker type="pattern" url="marker/mission1-1.patt">
-          <a-video
-            src="#animation1"
-            width="3"
-            height="4"
-            position="0 0.5 0"
-          ></a-video>
-        </a-marker>
-        <a-marker type="pattern" url="marker/mission1-2.patt">
-          <a-video
-            src="#animation1"
-            width="3"
-            height="4"
-            position="0 0.5 0"
-          ></a-video>
-        </a-marker>
-        <a-marker type="pattern" url="marker/mission1-3.patt">
-          <a-video
-            src="#animation1"
-            width="3"
-            height="4"
-            position="0 0.5 0"
-          ></a-video>
-        </a-marker>
-        <a-marker type="pattern" url="marker/mission1-4.patt">
-          <a-video
-            src="#animation1"
-            width="3"
-            height="4"
-            position="0 0.5 0"
-          ></a-video>
-        </a-marker>
-        <a-marker type="pattern" url="marker/mission1-5.patt">
-          <a-video
-            src="#animation1"
-            width="3"
-            height="4"
-            position="0 0.5 0"
-          ></a-video>
-        </a-marker>
-
         <video
-          id="animation2"
+          id="video2"
           src="animation/muffler.mp4"
-          crossorigin
           playsinline
           loop
           autoplay
         ></video>
-        <a-marker type="pattern" url="marker/mission2-1.patt">
-          <a-video
-            src="#animation2"
-            width="3"
-            height="4"
-            position="0 0.5 0"
-          ></a-video>
-        </a-marker>
-        <a-marker type="pattern" url="marker/mission2-2.patt">
-          <a-video
-            src="#animation2"
-            width="3"
-            height="4"
-            position="0 0.5 0"
-          ></a-video>
-        </a-marker>
-        <a-marker type="pattern" url="marker/mission2-3.patt">
-          <a-video
-            src="#animation2"
-            width="3"
-            height="4"
-            position="0 0.5 0"
-          ></a-video>
-        </a-marker>
-        <a-marker type="pattern" url="marker/mission2-4.patt">
-          <a-video
-            src="#animation2"
-            width="3"
-            height="4"
-            position="0 0.5 0"
-          ></a-video>
-        </a-marker>
-        <a-marker type="pattern" url="marker/mission2-5.patt">
-          <a-video
-            src="#animation2"
-            width="3"
-            height="4"
-            position="0 0.5 0"
-          ></a-video>
-        </a-marker>
-        <a-marker type="pattern" url="marker/mission2-6.patt">
-          <a-video
-            src="#animation2"
-            width="3"
-            height="4"
-            position="0 0.5 0"
-          ></a-video>
-        </a-marker>
+        <!-- 他のコンテンツ... -->
       </a-assets>
 
-      <!-- カメラエンティティ -->
+      <!-- マーカー1 -->
+      <a-marker type="pattern" url="marker/mission1-1.patt">
+        <a-video
+          src="#video1"
+          width="3"
+          height="4"
+          position="0 0.5 0"
+        ></a-video>
+      </a-marker>
+
+      <!-- マーカー2 -->
+      <a-marker type="pattern" url="marker/mission1-2.patt">
+        <a-video
+          src="#video1"
+          width="3"
+          height="4"
+          position="0 0.5 0"
+        ></a-video>
+      </a-marker>
+
+      <!-- マーカー3 -->
+      <a-marker type="pattern" url="marker/mission1-3.patt">
+        <a-video
+          src="#video1"
+          width="3"
+          height="4"
+          position="0 0.5 0"
+        ></a-video>
+      </a-marker>
+
+      <!-- マーカー3 -->
+      <a-marker type="pattern" url="marker/mission1-4.patt">
+        <a-video
+          src="#video1"
+          width="3"
+          height="4"
+          position="0 0.5 0"
+        ></a-video>
+      </a-marker>
+
+      <!-- マーカー3 -->
+      <a-marker type="pattern" url="marker/mission1-5.patt">
+        <a-video
+          src="#video1"
+          width="3"
+          height="4"
+          position="0 0.5 0"
+        ></a-video>
+      </a-marker>
+
+      <!-- マーカー3 -->
+      <a-marker type="pattern" url="marker/mission2-1.patt">
+        <a-video
+          src="#video2"
+          width="3"
+          height="4"
+          position="0 0.5 0"
+        ></a-video>
+      </a-marker>
+
+      <a-marker type="pattern" url="marker/mission2-2.patt">
+        <a-video
+          src="#video2"
+          width="3"
+          height="4"
+          position="0 0.5 0"
+        ></a-video>
+      </a-marker>
+
+      <a-marker type="pattern" url="marker/mission2-3.patt">
+        <a-video
+          src="#video2"
+          width="3"
+          height="4"
+          position="0 0.5 0"
+        ></a-video>
+      </a-marker>
+
+      <a-marker type="pattern" url="marker/mission2-4.patt">
+        <a-video
+          src="#video2"
+          width="3"
+          height="4"
+          position="0 0.5 0"
+        ></a-video>
+      </a-marker>
+
+      <a-marker type="pattern" url="marker/mission2-5.patt">
+        <a-video
+          src="#video2"
+          width="3"
+          height="4"
+          position="0 0.5 0"
+        ></a-video>
+      </a-marker>
+
+      <a-marker type="pattern" url="marker/mission2-6.patt">
+        <a-video
+          src="#video2"
+          width="3"
+          height="4"
+          position="0 0.5 0"
+        ></a-video>
+      </a-marker>
+
+      <!-- 他のマーカー... -->
+
       <a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>
-
-<!-- git init -->
-<!-- git add . -->
-<!-- git commit -m "first commit" -->
-<!-- git branch -M main -->
-<!-- git remote add origin https://github.com/YamamotoFuka/ar-book.git -->
-<!-- git push -u origin main -->
-
-<!-- 2回目から -->
-<!-- git add . -->
-<!-- git commit -m "ちょっと変更した" -->
-<!-- git branch -M main -->
-<!-- git push -u origin main -->
