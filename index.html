@@ -6,47 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ワニくんのプレゼントだいさくせんAR</title>
 
-    <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1.3.0/dist/aframe-master.min.js"></script>
+    <!-- A-FrameとAR.jsのスクリプトを読み込む -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <script src="js/aframe-ar.js"></script>
-
-    <style>
-      .arjs-loader {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(42, 25, 25, 0.8);
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .arjs-loader div {
-        text-align: center;
-        font-size: 1.25em;
-        color: white;
-      }
-    </style>
   </head>
   <body style="margin: 0px; overflow: hidden">
-    <!-- minimal loader shown until image descriptors are loaded -->
+    <!-- ローディング画面 -->
     <div class="arjs-loader">
       <div>じゅんびちゅう...</div>
     </div>
 
-    <a-scene embedded arjs="trackingMethod: best; sourceType: webcam;">
-      <!-- 画像認識ARの定義 -->
-      <a-marker type="pattern" src="mission1.patt">
-        <a-video
-          src="animation/flower.mp4"
-          width="3"
-          height="4"
-          position="0 0.5 0"
-        ></a-video>
+    <!-- ARシーン -->
+    <a-scene
+      embedded
+      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.90;"
+    >
+      <!-- ARのコンテンツ -->
+      <a-assets>
+        <!-- マーカーに関連する動画を読み込む -->
+        <video
+          id="1"
+          src="./animation/flower.mp4"
+          playsinline
+          loop
+          autoplay
+        ></video>
+
+        <!-- 新しい動画とマーカーの定義 -->
+        <video
+          id="2"
+          src="./animation/video2.mp4"
+          playsinline
+          loop
+          autoplay
+        ></video>
+        <a-marker type="pattern" url="marker2.patt">
+          <a-video src="#2" width="3" height="4" position="0 0.5 0"></a-video>
+        </a-marker>
+      </a-assets>
+
+      <!-- 自作のマーカー -->
+      <a-marker type="pattern" url="mission1.patt">
+        <!-- マーカーが検出されたときに表示される動画 -->
+        <a-video src="#1" width="3" height="4" position="0 0.5 0"></a-video>
       </a-marker>
+
+      <!-- カメラエンティティ -->
+      <a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>
