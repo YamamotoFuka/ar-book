@@ -36,29 +36,16 @@
     <div class="arjs-loader">
       <div>じゅんびちゅう...</div>
     </div>
-    <a-scene
-      vr-mode-ui="enabled: false;"
-      renderer="logarithmicDepthBuffer: true; precision: medium;"
-      embedded
-      arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
-    >
-      <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
-      <a-nft
-        type="nft"
-        url="mission1.png"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance=".01"
-        smoothThreshold="5"
-      >
+    <a-scene embedded arjs="trackingMethod: best; sourceType: webcam;">
+      <!-- 画像認識ARの定義 -->
+      <a-marker type="pattern" src="mission1.patt">
         <a-video
-          src="mission 1.patt"
-          width="4"
-          height="3"
-          position="150 300 -100"
+          src="animation/flower.mp4"
+          width="3"
+          height="4"
+          position="0 0.5 0"
         ></a-video>
-      </a-nft>
-      <a-entity camera></a-entity>
+      </a-marker>
     </a-scene>
   </body>
 </html>
