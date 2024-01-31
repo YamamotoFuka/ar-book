@@ -31,25 +31,55 @@
           loop
           autoplay
         ></video>
+        <!-- 自作のマーカー -->
+        <a-marker type="pattern" url="mission1-1.patt">
+          <!-- マーカーが検出されたときに表示される動画 -->
+          <a-video src="#1" width="3" height="4" position="0 0.5 0"></a-video>
+        </a-marker>
+        <a-marker type="pattern" url="./marker/mission1-2.patt">
+          <!-- マーカーが検出されたときに表示される動画 -->
+          <a-video src="#1" width="3" height="4" position="0 0.5 0"></a-video>
+        </a-marker>
+        <a-marker type="pattern" url="./marker/mission1-3.patt">
+          <!-- マーカーが検出されたときに表示される動画 -->
+          <a-video src="#1" width="3" height="4" position="0 0.5 0"></a-video>
+        </a-marker>
+        <a-marker type="pattern" url="./marker/mission1-4.patt">
+          <!-- マーカーが検出されたときに表示される動画 -->
+          <a-video src="#1" width="3" height="4" position="0 0.5 0"></a-video>
+        </a-marker>
+        <a-marker type="pattern" url="./marker/mission1-5.patt">
+          <!-- マーカーが検出されたときに表示される動画 -->
+          <a-video src="#1" width="3" height="4" position="0 0.5 0"></a-video>
+        </a-marker>
 
         <!-- 新しい動画とマーカーの定義 -->
         <video
           id="2"
-          src="./animation/video2.mp4"
+          src="./animation/muffler.mp4"
           playsinline
           loop
           autoplay
         ></video>
-        <a-marker type="pattern" url="marker2.patt">
+        <a-marker type="pattern" url="./marker/mission2-1.patt">
+          <a-video src="#2" width="3" height="4" position="0 0.5 0"></a-video>
+        </a-marker>
+        <a-marker type="pattern" url="./marker/mission2-2.patt">
+          <a-video src="#2" width="3" height="4" position="0 0.5 0"></a-video>
+        </a-marker>
+        <a-marker type="pattern" url="./marker/mission2-3.patt">
+          <a-video src="#2" width="3" height="4" position="0 0.5 0"></a-video>
+        </a-marker>
+        <a-marker type="pattern" url="./marker/mission2-4.patt">
+          <a-video src="#2" width="3" height="4" position="0 0.5 0"></a-video>
+        </a-marker>
+        <a-marker type="pattern" url="./marker/mission2-5.patt">
+          <a-video src="#2" width="3" height="4" position="0 0.5 0"></a-video>
+        </a-marker>
+        <a-marker type="pattern" url="./marker/mission2-6.patt">
           <a-video src="#2" width="3" height="4" position="0 0.5 0"></a-video>
         </a-marker>
       </a-assets>
-
-      <!-- 自作のマーカー -->
-      <a-marker type="pattern" url="mission1.patt">
-        <!-- マーカーが検出されたときに表示される動画 -->
-        <a-video src="#1" width="3" height="4" position="0 0.5 0"></a-video>
-      </a-marker>
 
       <!-- カメラエンティティ -->
       <a-entity camera></a-entity>
