@@ -64098,13 +64098,13 @@ ARjs.Profile.prototype.reset = function () {
     changeMatrixMode: "modelViewMatrix",
   };
 
-    // 自作のフリーマーカーに関する追加の設定
-    this.customMarkerParameters = {
-        type: "image",
-        patternUrl: THREEx.ArToolkitContext.baseURL + "../img/mission1.png",  // 自作のフリーマーカーのパス
-        changeMatrixMode: "modelViewMatrix",
-        // 他のカスタムパラメータを追加
-      };
+  // 自作のフリーマーカーに関する追加の設定
+  this.customMarkerParameters = {
+    type: "image",
+    patternUrl: THREEx.ArToolkitContext.baseURL + "../img/mission1.png", // 自作のフリーマーカーのパス
+    changeMatrixMode: "modelViewMatrix",
+    // 他のカスタムパラメータを追加
+  };
   return this;
 };
 
@@ -66453,25 +66453,17 @@ ARjs.MarkersAreaUtils.createDefaultMarkersControlsParameters = function (
           "examples/marker-training/examples/pattern-files/pattern-hiro.patt",
       },
       {
-        type: "pattern",
-        patternUrl:
-          absoluteBaseURL +
-          "examples/marker-training/examples/pattern-files/pattern-kanji.patt",
+        type: "image",
+        patternUrl: absoluteBaseURL + "mission1.png",
       },
       {
-        type: "pattern",
-        patternUrl:
-          absoluteBaseURL +
-          "examples/marker-training/examples/pattern-files/pattern-letterA.patt",
-      },
-      {
-        type: "pattern",
+        type: "image",
         patternUrl:
           absoluteBaseURL +
           "examples/marker-training/examples/pattern-files/pattern-letterB.patt",
       },
       {
-        type: "pattern",
+        type: "image",
         patternUrl:
           absoluteBaseURL +
           "examples/marker-training/examples/pattern-files/pattern-letterC.patt",
