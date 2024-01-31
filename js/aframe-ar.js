@@ -66453,8 +66453,8 @@ ARjs.MarkersAreaUtils.createDefaultMarkersControlsParameters = function (
           "examples/marker-training/examples/pattern-files/pattern-hiro.patt",
       },
       {
-        type: "image",
-        patternUrl: absoluteBaseURL + "mission1.png",
+        type: "pattern",
+        patternUrl: absoluteBaseURL + "mission1.patt",
       },
       {
         type: "image",
