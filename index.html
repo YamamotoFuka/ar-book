@@ -246,6 +246,14 @@
       </a-marker>
 
       <a-entity camera></a-entity>
+
+      <script>
+        // マーカーが検出されたときにアニメーションを開始
+        document.addEventListener("markerFound", function (event) {
+          var marker = event.target;
+          marker.emit("startEvents");
+        });
+      </script>
     </a-scene>
   </body>
 </html>
