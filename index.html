@@ -243,6 +243,14 @@
       </a-marker>
 
       <a-entity camera></a-entity>
+
+      <script>
+        // ユーザーアクションがあったときに動画を再生
+        document.addEventListener("click", function () {
+          var video1 = document.getElementById("video1");
+          video1.play();
+        });
+      </script>
     </a-scene>
   </body>
 </html>
